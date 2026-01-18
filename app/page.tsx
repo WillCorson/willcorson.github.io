@@ -1,65 +1,125 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { ArrowRight, Github, Instagram, Linkedin, Mail, Download } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col justify-center min-h-[80vh] animate-in fade-in slide-in-from-bottom-4 duration-700">
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        
+        {/* LEFT COLUMN: Text Content */}
+        <div className="space-y-6 order-2 md:order-1">
+          <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl min-h-[80px]">
+            hello world
+            <span className="animate-pulse text-blue-600">|</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <h1 className="text-3xl font-extrabold tracking-tight text-gray-700 sm:text-4xl min-h-[80px]">Let's build something amazing together.</h1>
+          <p className="text-xl text-gray-800 max-w-lg">
+            I'm a cybersecurity professional and a software engineer passionate about building efficient solutions, while making 
+            them safe for all at the exact same time.
           </p>
+          
+          <div className="flex flex-wrap gap-4">
+            {/* 1. VIEW MY WORK BUTTON */}
+            <Link
+              href="/resume"
+              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium
+                         text-white bg-gray-800 rounded-lg hover:bg-gray-900 transition-colors"
+            >
+              View My Experience <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium
+                        text-white bg-gray-600 rounded-lg hover:bg-gray-700 transition-colors"
+            >
+              View My Projects <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+
+            {/* 2. NEW RESUME BUTTON */}
+            <a
+              href="/Taylor_Chris_Resume_2026.pdf"
+              download="Taylor_Chris_Resume.pdf" 
+              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 bg-white border-2 border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-colors"
+            >
+              Resume <Download className="ml-2 h-4 w-4" />
+            </a>
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-2 ml-2">
+              <a
+                href="https://www.linkedin.com/in/william-corson-a16667232/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 text-gray-500 hover:text-blue-600 transition-colors"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="https://github.com/WillCorson" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 text-gray-500 hover:text-black transition-colors"
+              >
+                <Github size={24} />
+              </a>
+              <a
+                href="mailto:goalmaster8@gmail.com" target="_blank"
+                className="p-3 text-gray-500 hover:text-red-500 transition-colors"
+              >
+                <Mail size={24} />
+              </a>
+              <a 
+                href="https://www.instagram.com/bigtimber35/" target="_blank"
+                className="p-3 text-gray-500 hover:text-pink-500 transition-colors"
+              >
+                <Instagram size={24} />
+              </a>
+              <a 
+                href="https://www.discord.com/465965656270045184" target="_blank"
+                className="p-3 text-gray-500 hover:text-blue-300 transition-colors"
+              >
+                {/* Note: FontAwesome needs to be loaded separately, or use a Lucide icon if preferred */}
+                <i className="fas fa-discord fa-sm text-gray-500 hover:text-blue-300 transition-colors "></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* RIGHT COLUMN: Photo Placeholder */}
+        <div className="order-1 md:order-2 flex justify-center md:justify-end">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-200 shadow-xl bg-gray-100 flex items-center justify-center">
+             <img 
+              src="/profile.jpg" 
+              alt="Will Corson" 
+              className="object-cover w-full h-full"
+            /> 
+          </div>
         </div>
-      </main>
+      </div>
+
+      <br />
+      
+      <div className="space-y-6 order-2 md:order-1">
+          <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl min-h-[80px] pt-16">About Me</h1>
+          <p className="text-xl text-gray-800 max-w-lg">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <br /> <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.. 
+            <br /> <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+      </div>
+
     </div>
   );
 }
