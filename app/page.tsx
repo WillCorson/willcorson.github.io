@@ -18,8 +18,8 @@ export default function Home() {
           </h1>
           <h1 className="text-3xl font-extrabold tracking-tight text-gray-700 sm:text-4xl min-h-[80px]">Let's build something amazing together.</h1>
           <p className="text-xl text-gray-800 max-w-lg">
-            I'm a cybersecurity professional and a software engineer passionate about building efficient solutions, while making 
-            them safe for all at the exact same time.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
           
           <div className="flex flex-wrap gap-4">
