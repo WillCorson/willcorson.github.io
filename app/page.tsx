@@ -25,7 +25,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-4">
             {/* 1. VIEW MY WORK BUTTON */}
             <Link
-              href="/resume"
+              href="/experience"
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium
                          text-white bg-gray-800 rounded-lg hover:bg-gray-900 transition-colors"
             >
@@ -41,8 +41,8 @@ export default function Home() {
 
             {/* 2. NEW RESUME BUTTON */}
             <a
-              href="/Taylor_Chris_Resume_2026.pdf"
-              download="Taylor_Chris_Resume.pdf" 
+              href="/CorsonWilliam_UCMETResume_Spring2026.pdf"
+              download="CorsonWilliam_UCMETResume_Spring2026.pdf" 
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 bg-white border-2 border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-colors"
             >
               Resume <Download className="ml-2 h-4 w-4" />
